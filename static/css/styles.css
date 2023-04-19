@@ -1,0 +1,167 @@
+:root {
+    --background-color: #FFFFFF;
+    --text-color: #121212;
+    --chat-border-color: #ced4da;
+}
+
+:root.dark-mode {
+    --background-color: #121212;
+    --text-color: #FFFFFF;
+    --chat-border-color: #4f4f4f;
+}
+
+body {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    margin: 0;
+}
+
+#menu {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 200px;
+    height: 100%;
+    background-color: var(--background-color);
+    padding: 1rem;
+    z-index: 1;
+}
+
+#chat-container {
+    position: relative;
+    width: 100%;
+    max-width: 700px;
+    height: 80vh;
+    border: 1px solid var(--chat-border-color);
+    border-radius: 5px;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    margin-left: 50px; /* Updated margin-left value */
+}
+.chat-header {
+    background-color: #4f4f4f; /* Change the color to your desired gray */
+    padding: 0.5rem 1rem;
+    width: 100%;
+    box-sizing: border-box; /* Make sure the padding is included in the width */
+}
+
+#chat-title {
+    font-weight: bold;
+    color: white; /* Change the text color to white or any other desired color */
+}
+
+#messages {
+    flex-grow: 1;
+    overflow-y: auto;
+    padding: 1rem;
+}
+
+.message {
+    display: flex;
+    align-items: flex-start;
+    margin-bottom: 0.75rem;
+}
+
+.user-msg {
+    justify-content: flex-end;
+}
+
+.message img {
+    width: 32px;
+    height: 32px;
+    border-radius: 50%;
+}
+
+.user-msg img {
+    margin-left: 0.5rem;
+}
+
+.bot-msg img {
+    margin-right: 0.5rem;
+}
+
+.message-content {
+    max-width: 60%;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    overflow-wrap: break-word;
+    background-color: var(--chat-border-color);
+    color: var(--text-color);
+}
+
+.user-msg .message-content {
+    background-color: #3f51b5;
+    color: white;
+}
+
+.bot-msg .message-content {
+    background-color: #4f4f4f;
+    color: white;
+}
+
+#input-container {
+    display: flex;
+    border-top: 1px solid var(--chat-border-color);
+}
+
+#input-container input {
+    flex-grow: 1;
+    border: none;
+    padding: 1rem;
+    background-color: var(--background-color);
+    color: var(--text-color);
+    width: 100%;
+}
+
+#input-container button {
+    border: none;
+    background-color: #3f51b5;
+    color: white;
+    font-weight: bold;
+    padding: 1rem;
+}
+
+#topics-container {
+    position: fixed;
+    top: 0;
+    right: 0;
+    width: 250px; /* Increased width to accommodate bubble */
+    height: 100%;
+    background-color: var(--background-color);
+    padding: 1rem;
+    z-index: 1;
+    display: flex;
+    flex-direction: column;
+    overflow-y: auto; /* Add scroll when content overflows */
+}
+
+#topics-container h3 {
+    margin-top: 0;
+    margin-bottom: 1rem;
+}
+
+#topics-container ul {
+    list-style-type: none;
+    padding: 0;
+}
+
+/* New styles for the topic bubbles */
+#topics-container li {
+    display: inline-block;
+    margin-bottom: 0.5rem;
+    margin-right: 0.5rem;
+}
+
+#topics-container .topic-bubble {
+    display: inline-block;
+    padding: 0.5rem 1rem;
+    border-radius: 1rem;
+    background-color: var(--chat-border-color);
+    color: var(--text-color);
+}
+

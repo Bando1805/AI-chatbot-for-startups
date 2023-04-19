@@ -1,0 +1,40 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Startup Assistant</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/styles.css') }}">
+</head>
+<body class="dark-mode"> <!-- Enable dark mode by default -->
+    <div id="menu">
+        <h3>Menu</h3>
+        <label>
+            <input id="dark-mode-toggle" type="checkbox"> Dark mode
+        </label>
+        <br>
+        <button id="refresh">Refresh</button>
+    </div>
+    <div id="chat-container">
+        <div class="chat-header">
+            <span id="chat-title">Startup Assistant</span>
+        </div>
+        <div id="messages"></div>
+        <div id="input-container">
+            <input id="input" type="text" placeholder="Type your message...">
+            <button id="send">Send</button>
+        </div>
+    </div>
+    <div id="topics-container">
+        <h3>Topics that you can ask me about</h3>
+        <pre id="topics-content"></pre>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/socket.io/4.0.1/socket.io.min.js"></script>
+    <script>
+        const userImage = "{{ url_for('static', filename='images/user.png') }}";
+        const botImage = "{{ url_for('static', filename='images/bot.png') }}";
+    </script>
+    <script src="{{ url_for('static', filename='js/scripts.js') }}"></script>
+</body>
+</html>
